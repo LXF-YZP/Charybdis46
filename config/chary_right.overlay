@@ -1,5 +1,3 @@
-#include <zephyr/dt-bindings/input/input-event-codes.h>
-
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
@@ -32,9 +30,9 @@
         compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
-        motion-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        zephyr,axis-x = <INPUT_REL_X>;
-        zephyr,axis-y = <INPUT_REL_Y>;
+        irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        scroll-layers = <1>;
+        automouse-layer = <5>;
     };
 };
 
