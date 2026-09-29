@@ -32,7 +32,7 @@
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         scroll-layers = <1>;
-        automouse-layer = <5>;
+        automouse-layer = <2>;
     };
 };
 
