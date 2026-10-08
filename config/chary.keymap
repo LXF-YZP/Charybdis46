@@ -104,7 +104,7 @@
             bindings = <
 &trans  &kp KP_N7    &kp KP_N8        &kp KP_N9      &kp KP_SLASH      &kp UNDER           &none  &mkp LCLK  &none  &mkp RCLK  &none  &trans
 &trans  &kp KP_N4    &kp KP_N5        &kp KP_N6      &kp KP_ASTERISK   &kp CARET           &mkp MCLK  &mkp LCLK  &kp UP  &mkp RCLK  &none  &trans
-&trans  &kp KP_N1    &kp KP_N2        &kp KP_N3      &kp KP_SUBTRACT   &kp PRCNT           &kp PG_DN  &mkp MCLK  &kp DOWN  &kp RIGHT &none  &trans
+&trans  &kp KP_N1    &kp KP_N2        &kp KP_N3      &kp KP_SUBTRACT   &kp PRCNT           &kp PG_DN  &mkp LCLK  &kp DOWN  &kp RIGHT &none  &trans
 &trans  &kp KP_N0    &kp KP_COMMA     &kp  KP_DOT    &kp PLUS          &kp KP_EQUAL        &kp INS  &mkp MCLK  &kp PSCRN  &kp END  &trans &mo 3
                        &trans    &trans    &trans    &trans  &trans  &trans  &trans  &trans 
             >;
