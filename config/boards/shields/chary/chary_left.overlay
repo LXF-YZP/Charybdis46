@@ -9,11 +9,56 @@
 &kscan0 {
     diode-direction = "col2row";
     col-gpios
-        = <&pro_micro 9 (GPIO_ACTIVE_HIGH)> // COL0
-        , <&pro_micro 8 (GPIO_ACTIVE_HIGH)> // COL1
-        , <&pro_micro 7 (GPIO_ACTIVE_HIGH)> // COL2
-        , <&pro_micro 6 (GPIO_ACTIVE_HIGH)> // COL3
-	    , <&pro_micro 5 (GPIO_ACTIVE_HIGH)> // COL4
-        , <&pro_micro 4 (GPIO_ACTIVE_HIGH)> // COL5
+        = <&pro_micro 4 (GPIO_ACTIVE_HIGH)> // COL0: D4
+        , <&pro_micro 5 (GPIO_ACTIVE_HIGH)> // COL1: D5
+        , <&pro_micro 6 (GPIO_ACTIVE_HIGH)> // COL2: D6
+        , <&pro_micro 7 (GPIO_ACTIVE_HIGH)> // COL3: D7
+	    , <&pro_micro 8 (GPIO_ACTIVE_HIGH)> // COL4: D8
+        , <&pro_micro 9 (GPIO_ACTIVE_HIGH)> // COL5: D9
     ;
+};
+
+&pinctrl {
+    spi0_default: spi0_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 0)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 2)>,
+                <NRF_PSEL(SPIM_MISO, 0, 1)>;
+        };
+    };
+
+    spi0_sleep: spi0_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 0)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 2)>,
+                <NRF_PSEL(SPIM_MISO, 0, 1)>;
+            low-power-enable;
+        };
+    };
+};
+
+&spi0 {
+    status = "okay";
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
+    pinctrl-names = "default", "sleep";
+    cs-gpios = <&pro_micro 3 GPIO_ACTIVE_LOW>;
+
+    trackball: trackball@0 {
+        status = "okay";
+        compatible = "pixart,pmw3610";
+        reg = <0>;
+        spi-max-frequency = <2000000>;
+        irq-gpios = <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        scroll-layers = <1>;
+        automouse-layer = <2>;
+    };
+};
+
+/ {
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+    };
 };

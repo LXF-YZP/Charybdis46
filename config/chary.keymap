@@ -27,7 +27,7 @@
 
         ldown {
             bindings = <&kp DOWN>;
-            key-positions = <39 40>;
+            key-positions = <36 37>;
             timeout-ms = <50>;
         };
 
@@ -54,7 +54,7 @@
 
         rdown {
             bindings = <&kp DOWN>;
-            key-positions = <43 44>;
+            key-positions = <39 40>;
             timeout-ms = <50>;
         };
 
@@ -83,8 +83,7 @@
 &kp ESC        &kp N1  &kp N2         &kp N3        &kp N4     &kp N5           &kp N6         &kp N7     &kp N8     &kp N9     &kp N0    &kp MINUS
 &kp DELETE     &kp Q   &kp W          &kp E         &kp R      &kp T            &kp Y          &kp U      &kp I      &kp O      &kp P     &kp BACKSPACE
 &kp TAB        &kp A   &kp S          &kp D         &kp F      &kp G            &kp H          &kp J      &kp K      &kp L      &kp SEMI  &kp SQT
-&kp LSHFT     &kp Z   &kp X          &kp C         &kp V      &kp B            &kp N          &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp NUBS
-          &kp LCTRL     &kp LGUI      &kp LALT     &kp ENTER   &mo 1                                            &mo 2      &kp SPACE   &kp BACKSPACE 
+          &kp LCTRL     &kp ENTER    &mo 1                                            &mo 2      &kp SPACE   &kp BACKSPACE
             >;
         };
 
@@ -94,8 +93,7 @@
 &kp F12  &kp F1  &kp F2    &kp F3    &kp F4     &kp F5  &kp F6  &kp F7     &kp F8     &kp F9      &kp F10      &kp F11
 &trans  &kp N1         &kp N2        &kp N3         &kp N4      &kp N5      &kp N6  &kp N7   &kp N8   &kp N9    &kp N0  &trans
 &trans    &kp EXCL   &kp AT  &kp POUND  &kp DLLR  &kp PRCNT   &kp CARET   &kp AMPS  &kp STAR  &kp LPAR   &kp RPAR        &trans
-&trans  &kp EQUAL   &kp MINUS    &kp PLUS     &kp LBRC       &kp RBRC    &kp LBKT   &kp RBKT  &kp GRAVE  &kp TILDE   &kp KP_COMMA     &kp KP_DOT
-                 &trans     &trans     &trans      &trans   &trans   &trans      &trans      &trans 
+                 &trans     &trans     &trans                           &trans      &trans      &trans
             >;
         };
 
@@ -105,8 +103,7 @@
 &trans  &kp KP_N7    &kp KP_N8        &kp KP_N9      &kp KP_SLASH      &kp UNDER           &none  &mkp LCLK  &none  &mkp RCLK  &none  &trans
 &trans  &kp KP_N4    &kp KP_N5        &kp KP_N6      &kp KP_ASTERISK   &kp CARET           &mkp MCLK  &mkp LCLK  &kp UP  &mkp RCLK  &none  &trans
 &trans  &kp KP_N1    &kp KP_N2        &kp KP_N3      &kp KP_SUBTRACT   &kp PRCNT           &kp PG_DN  &mkp LCLK  &kp DOWN  &kp RIGHT &none  &trans
-&trans  &kp KP_N0    &kp KP_COMMA     &kp  KP_DOT    &kp PLUS          &kp KP_EQUAL        &kp INS  &mkp MCLK  &kp PSCRN  &kp END  &trans &mo 3
-                       &trans    &trans    &trans    &trans  &trans  &trans  &trans  &trans 
+                       &trans    &trans    &mo 3                             &trans  &trans  &trans
             >;
         };
 
@@ -118,8 +115,7 @@
                        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
 &sys_reset    &none         &none         &none         &none         &out OUT_USB  &out OUT_USB  &none         &none         &none         &none         &sys_reset
 &none         &none         &none         &none         &none         &out OUT_BLE  &out OUT_BLE  &none         &none         &none         &none         &none
-&none         &none         &none         &none         &mkp RCLK         &mkp LCLK         &mkp LCLK         &mkp RCLK         &none         &none         &none         &none
-                            &none         &none         &none         &none         &none         &none         &none         &none  
+                            &none         &none         &none                           &none         &none         &none
             >;
         };
     };
