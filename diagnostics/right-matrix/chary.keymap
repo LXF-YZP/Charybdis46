@@ -1,0 +1,25 @@
+#include <behaviors.dtsi>
+
+/* This keymap is applied after the normal shield has defined these nodes. */
+&spi0 { status = "disabled"; };
+&trackball { status = "disabled"; };
+&left_trackball_split { status = "disabled"; };
+&left_trackball_listener { status = "disabled"; };
+&right_trackball_listener { status = "disabled"; };
+&zip_temp_layer { status = "disabled"; };
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        matrix_test {
+            display-name = "Matrix test (no key output)";
+            bindings = <
+                &none &none &none &none &none &none    &none &none &none &none &none &none
+                &none &none &none &none &none &none    &none &none &none &none &none &none
+                &none &none &none &none &none &none    &none &none &none &none &none &none
+                                  &none &none &none    &none &none &none
+            >;
+        };
+    };
+};

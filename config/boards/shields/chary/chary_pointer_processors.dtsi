@@ -1,0 +1,14 @@
+/* Both sensors are configured to emit raw XY; process each on the central.
+ * Scaling here preserves sub-pixel remainders across small movements.
+ */
+input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+                   <&zip_xy_scaler 1 4>,
+                   <&zip_temp_layer 2 400>;
+
+scroll {
+    layers = <1>;
+    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+                       <&zip_xy_to_scroll_mapper>,
+                       <&zip_scroll_scaler 1 32>,
+                       <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
+};

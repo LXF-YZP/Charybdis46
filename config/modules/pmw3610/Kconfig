@@ -13,6 +13,13 @@ menuconfig PMW3610
 
 if PMW3610
 
+config PMW3610_INIT_POWER_UP_EXTRA_DELAY_MS
+    int "Additional power-up delay before resetting the PMW3610"
+    default 1000
+    range 0 5000
+    help
+      Extra delay for boards whose sensor VCC rail is enabled after MCU boot.
+
 config PMW3610_SMART_ALGORITHM
   bool "Enable an algorithm of PMW3610 to enhance surface coverage"
   default y
