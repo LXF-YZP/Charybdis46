@@ -7,11 +7,6 @@
 #include "chary.dtsi"
 
 / {
-    chosen {
-        zephyr,console = &chary_usb_logging_uart;
-        zephyr,shell-uart = &chary_usb_logging_uart;
-    };
-
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
@@ -71,10 +66,4 @@
 
 &trackball_split {
     device = <&trackball>;
-};
-
-&zephyr_udc0 {
-    chary_usb_logging_uart: chary_usb_logging_uart {
-        compatible = "zephyr,cdc-acm-uart";
-    };
 };

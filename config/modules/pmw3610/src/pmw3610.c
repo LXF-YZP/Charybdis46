@@ -664,11 +664,6 @@ static int pmw3610_report_data(const struct device *dev) {
         y = -y;
     }
 
-    if ((x != 0 || y != 0) && !data->debug_motion_logged) {
-        LOG_INF("First motion: raw=(%d,%d), reported=(%d,%d)", raw_x, raw_y, x, y);
-        data->debug_motion_logged = true;
-    }
-
 #ifdef CONFIG_PMW3610_SMART_ALGORITHM
     int16_t shutter =
         ((int16_t)(buf[PMW3610_SHUTTER_H_POS] & 0x01) << 8) + buf[PMW3610_SHUTTER_L_POS];
@@ -731,11 +726,6 @@ static void pmw3610_gpio_callback(const struct device *gpiob, struct gpio_callba
                                   uint32_t pins) {
     struct pixart_data *data = CONTAINER_OF(cb, struct pixart_data, irq_gpio_cb);
     const struct device *dev = data->dev;
-
-    if (!data->debug_irq_logged) {
-        LOG_INF("First motion IRQ received");
-        data->debug_irq_logged = true;
-    }
 
     set_interrupt(dev, false);
 
