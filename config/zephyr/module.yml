@@ -1,0 +1,5 @@
+build:
+  cmake: modules/pmw3610
+  kconfig: modules/pmw3610/Kconfig
+  settings:
+    dts_root: modules/pmw3610
