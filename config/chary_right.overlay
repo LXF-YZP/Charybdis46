@@ -1,3 +1,16 @@
+/ {
+    chosen {
+        zephyr,console = &chary_usb_logging_uart;
+        zephyr,shell-uart = &chary_usb_logging_uart;
+    };
+};
+
+&zephyr_udc0 {
+    chary_usb_logging_uart: chary_usb_logging_uart {
+        compatible = "zephyr,cdc-acm-uart";
+    };
+};
+
 &pinctrl {
     spi0_default: spi0_default {
         group1 {

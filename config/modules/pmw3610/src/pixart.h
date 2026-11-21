@@ -45,6 +45,8 @@ struct pixart_data {
     bool ready;           // whether init is finished successfully
     bool last_read_burst; // todo: needed?
     int err;              // error code during async init
+    bool debug_irq_logged;
+    bool debug_motion_logged;
 
     // for pmw3610 smart algorithm
     bool sw_smart_flag;
