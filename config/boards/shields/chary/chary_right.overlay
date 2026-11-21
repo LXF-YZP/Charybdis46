@@ -32,6 +32,11 @@
             , <&pro_micro 9 GPIO_ACTIVE_HIGH> // COL5: D9
         ;
     };
+
+    trackball_split_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball_split>;
+    };
 };
 
 &pinctrl {
